@@ -114,6 +114,8 @@
     "valid-url": "^1.0.9",
     "wuzzy": "^0.1.4",
     "yargs-parser": "^15.0.1"
+    "express": "^4.18.2", 
+    "node-fetch": "^2.6.7"
   },
   "bundleDependencies": [
     "jquery",
