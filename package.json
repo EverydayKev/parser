@@ -24,18 +24,38 @@
     "cli.js",
     "src/shims/"
   ],
-  "main": "./dist/mercury.js",
+  "main": "server.js",
   "bin": {
     "mercury-parser": "./cli.js",
     "postlight-parser": "./cli.js"
   },
-"scripts": {
-  "start": "node server.js",
-  "build": "babel src --out-dir dist --ignore 'src/test.js'"
-}
+  "scripts": {
+    "start": "node server.js",
+    "build": "babel src --out-dir dist --ignore 'src/test.js'"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.2.0",
+    "@postlight/ci-failed-test-reporter": "^1.0",
+    "browser-request": "github:postlight/browser-request#feat-add-headers-to-response",
+    "cheerio": "^0.22.0",
+    "difflib": "github:postlight/difflib.js",
+    "ellipsize": "0.1.0",
+    "iconv-lite": "0.5.0",
+    "jquery": "^3.5.0",
+    "moment": "^2.23.0",
+    "moment-parseformat": "3.0.0",
+    "moment-timezone": "0.5.37",
+    "postman-request": "^2.88.1-postman.31",
+    "string-direction": "^0.1.2",
+    "turndown": "^7.1.1",
+    "valid-url": "^1.0.9",
+    "wuzzy": "^0.1.4",
+    "yargs-parser": "^15.0.1",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -64,7 +84,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
-    "express": "^4.16.4",
     "husky": "^3.0.0",
     "inquirer": "^7.0.0",
     "jasmine-core": "^2.5.2",
@@ -95,27 +114,6 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-uglify": "^6.0.1",
     "watchify": "^3.11.1"
-  },
-  "dependencies": {
-    "@babel/runtime-corejs2": "^7.2.0",
-    "@postlight/ci-failed-test-reporter": "^1.0",
-    "browser-request": "github:postlight/browser-request#feat-add-headers-to-response",
-    "cheerio": "^0.22.0",
-    "difflib": "github:postlight/difflib.js",
-    "ellipsize": "0.1.0",
-    "iconv-lite": "0.5.0",
-    "jquery": "^3.5.0",
-    "moment": "^2.23.0",
-    "moment-parseformat": "3.0.0",
-    "moment-timezone": "0.5.37",
-    "postman-request": "^2.88.1-postman.31",
-    "string-direction": "^0.1.2",
-    "turndown": "^7.1.1",
-    "valid-url": "^1.0.9",
-    "wuzzy": "^0.1.4",
-    "yargs-parser": "^15.0.1"
-    "express": "^4.18.2", 
-    "node-fetch": "^2.6.7"
   },
   "bundleDependencies": [
     "jquery",
