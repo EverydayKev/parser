@@ -29,27 +29,10 @@
     "mercury-parser": "./cli.js",
     "postlight-parser": "./cli.js"
   },
-  "scripts": {
-    "lint": "eslint . --fix",
-    "lint:ci": "remark . && eslint .",
-    "lint-fix-quiet": "eslint --fix --quiet",
-    "build": "yarn lint && rollup -c && yarn test:build",
-    "build:ci": "rollup -c && yarn test:build",
-    "build:web": "yarn lint && rollup -c rollup.config.web.js && yarn test:build:web",
-    "build:esm": "yarn lint && rollup -c rollup.config.esm.js && yarn test:build:esm",
-    "build:esm:ci": "rollup -c rollup.config.esm.js && yarn test:build:esm",
-    "build:web:ci": "rollup -c rollup.config.web.js && yarn test:build:web",
-    "release": "yarn build && yarn build:web",
-    "build:generator": "rollup -c scripts/rollup.config.js",
-    "test_build": "rollup -c",
-    "test": "yarn test:node && yarn test:web",
-    "test:node": "jest --json --outputFile test-output.json",
-    "test:web": "node ./node_modules/karma/bin/karma start karma.conf.js --auto-watch",
-    "test:build": "cd ./scripts && jest check-build.test.js",
-    "test:build:web": "node ./scripts/proxy-browser-test.js",
-    "test:build:esm": "node ./scripts/proxy-browser-test.js",
-    "watch:test": "jest --watch",
-    "generate-parser": "node ./dist/generate-custom-parser.js"
+"scripts": {
+  "start": "node server.js",
+  "build": "babel src --out-dir dist --ignore 'src/test.js'"
+}
   },
   "engines": {
     "node": ">=10"
